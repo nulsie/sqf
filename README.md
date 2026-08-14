@@ -47,18 +47,21 @@ boundary limits by filtering for standard valid addresses, allowing for maximum 
 Usage
 
 Basic execution
+
 You must provide a Subleq source file (.sq) containing whitespace or newline-separated integers.
 ```bash
 perl main.pl program.sq
 ```
 
 Loading with a reactive-address config file
+
 You can pass an optional .clis configuration file to map memory addresses to system functions.
 ```bash
 perl main.pl program.sq config.clis
 ```
 
 Multi-core booting
+
 You can spawn multiple Subleq cores executing simultaneously by defining the starting Program Counters via the 
 SUBLEQ_PCS environment variable (comma-separated).
 ```bash
@@ -67,6 +70,7 @@ SUBLEQ_PCS=0,50,100 perl main.pl program.sq
 ```
 
 Memory-Mapped I/O with CLIS
+
 The Config Lang Integrated with Subleq (CLIS) allows you to bind memory addresses to Perl callbacks using the tie mechanism.
 
 CLIS Syntax
@@ -75,10 +79,12 @@ hook <addr> <read|write> -> <action>(<args>)
 ```
 
 Multi-core sync
+
 The VM includes a built-in SyncBus for safe inter-thread communication. The bus utilizes a strict rendezvous sys: 
 the writer pauses until the data is read, and the reader pauses until the data is written.
 
 Subleq programs interface with the SyncBus using address -2:
+
 - Write to Bus: Use -2 as operand B
 * Read from Bus: Use -2 as operand A
 ```perl
