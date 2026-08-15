@@ -100,6 +100,8 @@ sub write {
 }
 ```
 
+And thanks to my friend, [Kamila](https://github.com/iczelia) for the idea for this project.
+
 ---
 
 Author: nulsie License: MIT
