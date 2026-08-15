@@ -99,3 +99,7 @@ sub write {
     cond_wait($self) while $self->{has_data}; # Pause until consumed
 }
 ```
+
+---
+
+Author: nulsie License: MIT
